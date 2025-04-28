@@ -1,0 +1,6 @@
+/* src/index.css */
+@import "tailwindcss";
+
+body {
+  @apply bg-gray-50 font-sans;
+}
