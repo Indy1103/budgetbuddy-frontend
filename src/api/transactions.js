@@ -3,6 +3,11 @@ import axios from 'axios';
 
 const API = import.meta.env.VITE_API_URL;
 
+console.log("API_BASE_URL (from env):", API);
+if (!API) {
+  console.error("VITE_API_URL environment variable is NOT set or is empty!");
+}
+
 function authHeaders(token) {
   return {
     headers: { Authorization: `Bearer ${token}` }
