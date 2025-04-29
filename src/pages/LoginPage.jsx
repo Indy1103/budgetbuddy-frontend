@@ -4,6 +4,7 @@ import { useAuth }                 from '../context/AuthContext';
 import { AuthLayout }              from '../components/AuthLayout';
 import { Input }                   from '../components/Input';
 import { Button }                  from '../components/button';
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const [email, setEmail]       = useState('');
@@ -25,7 +26,7 @@ export default function LoginPage() {
 
   return (
     <AuthLayout>
-      <h2 className="text-3xl font-heading text-center mb-2">
+      <h2 className="text-3xl font-heading text-center mb-3 font-semibold">
         Sign in with email
       </h2>
       <p className="text-center text-gray-600 mb-6">
@@ -43,6 +44,13 @@ export default function LoginPage() {
           placeholder="••••••••" />
         <Button type="submit">Continue</Button>
       </form>
+      <p className="mt-4 text-center text-sm text-[#27272a]">
+        Don’t have an account?{' '}
+        <Link to="/signup" className="text-[#27272a] hover:underline">
+        Sign up
+        </Link>
+      </p>
+
     </AuthLayout>
   );
 }

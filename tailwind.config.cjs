@@ -1,24 +1,35 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.cjs
 module.exports = {
-  content: [
-    './index.html',
-    './src/**/*.{js,jsx,ts,tsx}',
-  ],
+  // … your content globs …
   theme: {
     extend: {
-      colors: {
-        brand: {
-          500: '#7C3AED', /* a warm violet */
-          600: '#6D28D9',
-        },
-        bg: {
-          light: '#F9FAFB',
-        }
-      }
+      fontFamily: {
+        // SF Pro is a system font on Apple devices; fallback to system-ui on others
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif'
+        ],
+        heading: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif'
+        ],
+      },
+      fontWeight: {
+        regular: 400,
+        medium: 500,
+        semibold: 600,
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    // require('@tailwindcss/typography'),
-  ],
+  // … plugins …
 };
